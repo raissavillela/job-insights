@@ -1,0 +1,7 @@
+click==8.0.4
+itsdangerous==2.1.0
+Jinja2==3.0.3
+MarkupSafe==2.1.0
+Werkzeug==2.0.3
+python-dotenv==0.19.2
+Markdown==3.3.6
