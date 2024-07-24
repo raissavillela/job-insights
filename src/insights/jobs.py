@@ -12,7 +12,12 @@ class ProcessJobs:
         return self.jobs_list
 
     def get_unique_job_types(self) -> List[str]:
-        pass
+        if not self.jobs_list:
+            return []
+        return list({
+            job['job_type']
+            for job in self.jobs_list if job['job_type']
+        })
 
     def filter_by_multiple_criteria(self) -> List[dict]:
         pass
