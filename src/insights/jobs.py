@@ -19,5 +19,20 @@ class ProcessJobs:
             for job in self.jobs_list if job['job_type']
         })
 
-    def filter_by_multiple_criteria(self) -> List[dict]:
-        pass
+    def filter_by_multiple_criteria(
+            self,
+            jobs: List[Dict],
+            filter_criteria: Dict[str, str]
+    ) -> List[dict]:
+        if not isinstance(filter_criteria, dict):
+            raise TypeError('O segundo parâmetro deve ser um dicionário')
+        industry = filter_criteria.get('industry')
+        type = filter_criteria.get('job_type')
+
+        job_list = []
+
+        for job in jobs:
+            if job.get('industry') == industry and job.get('job_type') == type:
+                job_list.append(job)
+
+        return job_list
